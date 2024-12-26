@@ -126,7 +126,13 @@ We welcome contributions to OpenFlow! Please see our [Contributing Guide](CONTRI
 
 ## 📝 License
 
-OpenFlow is licensed under the [MIT License](LICENSE).
+OpenFlow is licensed under the [Fair Code License](LICENSE):
+- ✅ Free for individuals and small businesses
+- ✅ Free for non-profit organizations
+- ✅ Commercial license required for larger organizations
+- ✅ Source code remains open and modifiable
+
+See the [LICENSE](LICENSE) file for details or contact licensing@openflow.dev for commercial use.
 
 ## 🔗 Links
 
