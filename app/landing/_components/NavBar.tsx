@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { smoothScroll } from "@/lib/utils";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 export function NavBar() {
   return (
