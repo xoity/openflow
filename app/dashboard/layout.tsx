@@ -1,25 +1,13 @@
-import { SignedIn, UserButton } from "@clerk/nextjs";
+import { ReactNode } from "react";
+import { DashboardNav } from "./_components/DashboardNav";
 
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
-    <SignedIn>
-      <div className="min-h-screen bg-background">
-        <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container flex h-16 items-center px-4">
-            <h1 className="font-bold">OpenFlow</h1>
-            <div className="ml-auto">
-              <UserButton afterSignOutUrl="/landing" />
-            </div>
-          </div>
-        </nav>
-        <main className="container mx-auto px-4 py-6">
-          {children}
-        </main>
-      </div>
-    </SignedIn>
+    <div className="flex h-screen bg-accent/5">
+      <DashboardNav />
+      <main className="flex-1 overflow-y-auto">
+        <div className="container py-6">{children}</div>
+      </main>
+    </div>
   );
 }
