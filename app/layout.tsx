@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   title: "OpenFlow - AI-Powered DevOps Automation",
   description: "Streamline your development workflow with AI-powered code reviews, pull request management, and analytics.",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,9 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-white`} 
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-white`}>
         {children}
       </body>
     </html>
