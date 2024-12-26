@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { smoothScroll } from "@/lib/utils";
 import { GetStartedButton } from "./GetStartedButton";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 export function NavBar() {
   return (
@@ -39,14 +39,19 @@ export function NavBar() {
             <GetStartedButton size="sm" showIcon={false} />
           </div>
         </div>
-        <span className="text-large">
+        <div className="flex items-center gap-4">
           <SignedIn>
-            <Link href="/dashboard">Dashboard</Link>
+            <Link href="/dashboard" className="text-sm font-medium">Dashboard</Link>
+            <UserButton afterSignOutUrl="/landing" />
           </SignedIn>
           <SignedOut>
-          <SignInButton>Login </SignInButton>
+            <SignInButton mode="modal">
+              <button className="text-sm font-medium hover:text-accent transition-colors">
+                Login
+              </button>
+            </SignInButton>
           </SignedOut>
-        </span>
+        </div>
       </nav>
     </header>
   );
