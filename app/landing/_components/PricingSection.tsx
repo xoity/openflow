@@ -1,7 +1,10 @@
+'use client'
+
+import React from 'react';
+import { CommitGraphBackground } from './CommitGraphBackground';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Check } from "lucide-react";
-import React from "react";
 
 const pricingPlans = [
   {
@@ -56,8 +59,12 @@ const pricingPlans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="relative py-32 overflow-hidden">
+      {/* Add the commit graph background */}
+      <CommitGraphBackground />
+      
+      {/* Rest of your pricing section content */}
+      <div className="container relative z-10 mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-4">
           Simple, transparent pricing
         </h2>

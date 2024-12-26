@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { CodeReviewAnimation } from "./feature-animations/CodeReviewAnimation";
 import { AnalyticsAnimation } from "./feature-animations/AnalyticsAnimation";
 import { PRAnimation } from "./feature-animations/PRAnimation";
-import { SnakeAnimation } from './SnakeAnimation';
+import { CommitGraphBackground } from "./CommitGraphBackground";
 
 interface FeaturesProps {
   features: {
@@ -17,19 +17,15 @@ interface FeaturesProps {
 export function AnimatedFeatures({ features }: FeaturesProps) {
   return (
     <section id="features" className="relative py-32 overflow-hidden">
-      {/* Background with dots pattern */}
+      {/* Background layers */}
+      <CommitGraphBackground />
       <div 
-        className="absolute inset-0 bg-secondary/50"
+        className="absolute inset-0 bg-background/90 backdrop-blur-sm"
         style={{
           backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(0,0,0,0.02) 1px, transparent 1px)',
           backgroundSize: '24px 24px',
         }}
       />
-      
-      {/* Snake animation layer */}
-      <div className="absolute inset-0 z-0">
-        <SnakeAnimation />
-      </div>
       
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4">
