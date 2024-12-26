@@ -1,10 +1,10 @@
 'use client'
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Zap } from "lucide-react";
+import { Sparkles, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import { GetStartedButton } from "./GetStartedButton";
 
 export function AnimatedHero() {
   return (
@@ -59,30 +59,7 @@ export function AnimatedHero() {
             for your development team.
           </p>
           <div className="flex gap-4 justify-center items-center">
-            <SignedIn>
-              <Link href="/dashboard">
-                <Button 
-                  size="lg" 
-                  className="bg-accent text-accent-foreground hover:scale-105 transition-all"
-                >
-                  Go to Dashboard
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </SignedIn>
-            
-            <SignedOut>
-              <SignInButton mode="modal">
-                <Button 
-                  size="lg" 
-                  className="bg-accent text-accent-foreground hover:scale-105 transition-all"
-                >
-                  Start Free Trial
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </SignInButton>
-            </SignedOut>
-
+            <GetStartedButton size="lg" showIcon />
             <Link href="#features">
               <Button 
                 size="lg" 

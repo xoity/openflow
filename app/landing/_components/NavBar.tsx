@@ -4,8 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { smoothScroll } from "@/lib/utils";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import { GetStartedButton } from "./GetStartedButton";
 
 export function NavBar() {
   return (
@@ -37,38 +36,8 @@ export function NavBar() {
             >
               Pricing
             </a>
-            
-            <SignedOut>
-              <SignInButton mode="modal">
-                <button className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                  Log in
-                </button>
-              </SignInButton>
-            </SignedOut>
+            <GetStartedButton />
           </div>
-
-          <SignedIn>
-            <Link href="/dashboard">
-              <Button 
-                size="sm"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 transition-colors shadow-sm mr-4"
-              >
-                Dashboard
-              </Button>
-            </Link>
-            <UserButton afterSignOutUrl="/landing" />
-          </SignedIn>
-          
-          <SignedOut>
-            <SignInButton mode="modal">
-              <Button 
-                size="sm"
-                className="bg-accent text-accent-foreground hover:bg-accent/90 transition-colors shadow-sm"
-              >
-                Get Started
-              </Button>
-            </SignInButton>
-          </SignedOut>
         </div>
       </nav>
     </header>
