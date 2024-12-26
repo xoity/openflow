@@ -20,36 +20,37 @@ export function NavBar() {
           <span>OpenFlow</span>
         </Link>
 
-        <div className="flex items-center gap-6">
-          <div className="hidden md:flex items-center gap-6">
-            <a
-              href="#features"
-              onClick={(e) => smoothScroll(e, 'features')}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            >
-              Features
-            </a>
-            <a
-              href="#pricing"
-              onClick={(e) => smoothScroll(e, 'pricing')}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
-            >
-              Pricing
-            </a>
-            <GetStartedButton size="sm" showIcon={false} />
-          </div>
-        </div>
-        <div className="flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-6">
+          <a
+            href="#features"
+            onClick={(e) => smoothScroll(e, 'features')}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+          >
+            Features
+          </a>
+          <a
+            href="#pricing"
+            onClick={(e) => smoothScroll(e, 'pricing')}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+          >
+            Pricing
+          </a>
           <SignedIn>
-            <Link href="/dashboard" className="text-sm font-medium">Dashboard</Link>
+            <Link 
+              href="/dashboard" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Dashboard
+            </Link>
             <UserButton afterSignOutUrl="/landing" />
           </SignedIn>
           <SignedOut>
             <SignInButton mode="modal">
-              <button className="text-sm font-medium hover:text-accent transition-colors">
+              <span className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
                 Login
-              </button>
+              </span>
             </SignInButton>
+            <GetStartedButton size="sm" showIcon={false} />
           </SignedOut>
         </div>
       </nav>
