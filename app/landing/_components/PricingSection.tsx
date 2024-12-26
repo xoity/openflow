@@ -59,7 +59,7 @@ const pricingPlans = [
 
 export function PricingSection() {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section id="pricing" className="relative py-32 overflow-hidden">
       {/* Add the commit graph background */}
       <CommitGraphBackground />
       
