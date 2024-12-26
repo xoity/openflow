@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { smoothScroll } from "@/lib/utils";
 import { GetStartedButton } from "./GetStartedButton";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 
 export function NavBar() {
   return (
@@ -38,6 +39,14 @@ export function NavBar() {
             <GetStartedButton size="sm" showIcon={false} />
           </div>
         </div>
+        <span className="text-large">
+          <SignedIn>
+            <Link href="/dashboard">Dashboard</Link>
+          </SignedIn>
+          <SignedOut>
+          <SignInButton>Login </SignInButton>
+          </SignedOut>
+        </span>
       </nav>
     </header>
   );
